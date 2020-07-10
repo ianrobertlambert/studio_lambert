@@ -1,2 +1,2 @@
-# studiolambert
-Studio Lambert — The product design practice of Ian Rob Lambert.
+# Studio Lambert — Website
+The website for the qproduct design practice of Ian Rob Lambert.
