@@ -1,0 +1,466 @@
+/*  --------------------------------------------------------------------------------------------- */
+/*    00. CSS RESET
+/*  --------------------------------------------------------------------------------------------- */
+
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+	font-size: 100%;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	border: none;
+}
+blockquote:before,
+blockquote:after {
+	content: "";
+}
+
+/*  --------------------------------------------------------------------------------------------- */
+/*    01. DOCUMENT SETUP
+/*  --------------------------------------------------------------------------------------------- */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 4rem;
+	font-weight: 400;
+	line-height: 5.6rem;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	color: #000000;
+	background: #FFFFFF;
+}
+p {
+	font-size: 4rem;
+	font-weight: 400;
+	line-height: 5.6rem;
+	margin-bottom: 2.4rem;
+}
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	   -moz-box-sizing: inherit;
+	        box-sizing: inherit;
+	-webkit-font-smoothing: antialiased;
+}
+*:first-child {
+	margin-top: 0;
+}
+*:last-child {
+	margin-bottom: 0;
+}
+::-moz-selection {
+	color: #FFFFFF;
+	background: #000000;
+}
+::selection {
+	color: #FFFFFF;
+	background: #000000;
+}
+h1 {
+	font-size: 6.4rem;
+	font-weight: 400;
+	line-height: 7.2rem;
+	margin-bottom: 8rem;
+	letter-spacing: -1px;
+	color: #000000;
+}
+h2 {
+	font-size: 1.2rem;
+	font-weight: 500;
+	line-height: 1.6rem;
+	margin-bottom: 4rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	color: #000000;
+}
+.heavy {
+	font-weight: 500;
+}
+a {
+	-webkit-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+	    -ms-transition: all 0.2s ease;
+	     -o-transition: all 0.2s ease;
+	        transition: all 0.2s ease;
+	text-decoration: none;
+	color: #000000;
+	border-bottom: 0.0625rem solid #DFDFDF;
+}
+a:hover {
+	border-bottom-color: #000000;
+}
+img {
+	-webkit-filter: grayscale(100%);
+	   -moz-filter: grayscale(100%);
+	    -ms-filter: grayscale(100%);
+	     -o-filter: grayscale(100%);
+	        filter: grayscale(100%);
+	-webkit-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+	    -ms-transition: all 0.2s ease;
+	     -o-transition: all 0.2s ease;
+	        transition: all 0.2s ease;
+}
+img:hover {
+	-webkit-filter: grayscale(0);
+	   -moz-filter: grayscale(0);
+	    -ms-filter: grayscale(0);
+	     -o-filter: grayscale(0);
+	        filter: grayscale(0);
+	-webkit-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+	    -ms-transition: all 0.2s ease;
+	     -o-transition: all 0.2s ease;
+	        transition: all 0.2s ease;
+}
+.img-hover-reveal {
+	position: fixed;
+	width: 64rem;
+	height: 48rem;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+.img-hover-reveal-inner,
+.img-hover-reveal-img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.img-hover-reveal-deco {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+}
+.img-hover-reveal-img {
+	background-size: cover;
+	background-position: 50% 50%;
+}
+.sidebar {
+	position: fixed;
+	overflow: auto;
+	width: 40rem;
+	height: 100%;
+	margin: 0;
+	padding: 8rem;
+}
+.sidebar-title {
+	margin-bottom: 8rem;
+}
+.sidebar-title-name {
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 2.4rem;
+	margin-bottom: 0;
+}
+.sidebar-title-role {
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	margin-bottom: 0;
+	color: #4B4B4B;
+}
+.sidebar-menu {
+	display: block;
+	margin-bottom: 0;
+}
+.sidebar-menu li {
+	font-size: 1.8rem;
+	line-height: 3.2rem;
+	list-style: none;
+}
+.sidebar-social {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 8rem;
+}
+.sidebar-social li {
+	display: inline-block;
+	margin-right: 2.4rem;
+	list-style: none;
+}
+.sidebar-social li a {
+	border-bottom: 0;
+}
+.content {
+	max-width: 104rem;
+	margin-left: 40rem;
+	padding: 8rem 4rem 0 4rem;
+}
+.content-intro {
+	margin-bottom: 16rem;
+}
+.content-fullwidth-image {
+	max-width: 100%;
+	height: auto;
+}
+.content-profile {
+	margin-bottom: 16rem;
+}
+.content-clients {
+	margin-bottom: 16rem;
+}
+.content-clients p {
+	margin-bottom: 0;
+}
+.content-clients-client {
+	clear: both;
+}
+.content-clients-name {
+	font-weight: 500;
+	float: left;
+}
+.content-clients-industry {
+	float: right;
+	color: #DFDFDF;
+}
+.content-services {
+	margin-bottom: 16rem;
+}
+.content-services-service {
+	font-weight: 500;
+	margin-bottom: 0;
+}
+.content-work {
+	margin-bottom: 32rem;
+}
+.content-work-project {
+	margin-bottom: 4rem;
+}
+.content-work-name {
+	font-size: 6.4rem;
+	font-weight: 500;
+	line-height: 7.2rem;
+	margin-bottom: 1.6rem;
+	letter-spacing: -1px;
+	color: #000000;
+}
+.content-work-date {
+	color: #DFDFDF;
+}
+.content-contact {
+	margin-bottom: 32rem;
+}
+.content-contact h1 {
+	margin-bottom: 0;
+}
+.content-contact-social {
+	margin-top: 4rem;
+}
+.content-contact-social li {
+	display: inline-block;
+	margin-right: 2.4rem;
+	list-style: none;
+}
+.content-contact-social li a {
+	border-bottom: 0;
+}
+.content-footer {
+	width: 100%;
+	padding-top: 4rem;
+	margin-bottom: 16rem;
+	border-top: 0.0625rem solid #000000;
+	clear: both;
+}
+.content-footer p {
+	font-size: 1.8rem;
+	font-weight: 400;
+	line-height: 2.4rem;
+}
+.content-footer-left {
+	float: left;
+}
+.content-footer-right {
+	float: right;
+}
+.float {
+	display: inline-block;
+	-webkit-animation-name: float;
+	        animation-name: float;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+	-webkit-animation-timing-function: ease-in-out;
+	        animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+}
+@-webkit-keyframes float {
+	0% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	55% {
+		-webkit-transform: translateY(2rem);
+		        transform: translateY(2rem);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+}
+@keyframes float {
+	0% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	55% {
+		-webkit-transform: translateY(2rem);
+		        transform: translateY(2rem);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+}
+
+
+/*  --------------------------------------------------------------------------------------------- */
+/*    02. TABLET
+/*  --------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 1024px) {
+	.sidebar {
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 4rem 4rem 0 4rem;
+	}
+	.sidebar-title {
+		display: block;
+		float: left;
+	}
+	.sidebar-menu {
+		float: right;
+		list-style: none;
+	}
+	.sidebar-social {
+		display: none;
+	}
+	.sidebar li {
+		line-height: 2.4rem;
+		display: inline;
+		margin-left: 4rem;
+	}
+	.content {
+		margin: 0;
+		padding: 4rem;
+	}
+}
+
+/*  --------------------------------------------------------------------------------------------- */
+/*    03. MOBILE
+/*  --------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 640px) {
+	h1 {
+		font-size: 4.8rem;
+		line-height: 6.4rem;
+	}
+	p {
+		font-size: 2.4rem;
+		line-height: 4rem;
+	}
+	.sidebar {
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 2.4rem 2.4rem 0 2.4rem;
+	}
+	.sidebar-title {
+		display: block;
+		width: 100%;
+		margin-bottom: 1.6rem;
+	}
+	.sidebar-menu {
+		display: block;
+		width: 100%;
+		margin-bottom: 1.6rem;
+		float: none;
+	}
+	.sidebar-social {
+		display: none;
+	}
+	.sidebar li {
+		line-height: 2.4rem;
+		display: inline;
+		margin: 0 4rem 0 0;
+	}
+	.content {
+		margin: 0;
+		padding: 2.4rem;
+	}
+	.content-clients-client {
+		margin-bottom: 2.4rem;
+	}
+	.content-clients-name {
+		float: none;
+	}
+	.content-clients-industry {
+		float: none;
+	}
+	.content-work-name {
+		font-size: 4.8rem;
+		line-height: 6.4rem;
+	}
+	.content-footer-left {
+		float: none;
+		margin-bottom: 2.4rem;
+	}
+	.content-footer-right {
+		float: none;
+	}
+}
